@@ -1,12 +1,13 @@
 package assessment_1
 
 fun main(){
-    val sentence = "Kotlin is concise and expressive"
-    var vowel=0
-    for (i in 0 .. sentence.length-1){
-        val ch=sentence[i]
-        if(ch=='a' || ch =='e' || ch == 'i' || ch=='o' || ch =='u')
-            vowel++
+    var str : String = "Kotlin is concise and expressive"
+    val vowels = listOf('a', 'e', 'i', 'o', 'u')
+    var vowelCount : Int = 0
+    for(char in str.lowercase(Locale.getDefault())) {
+        if (char in vowels) {
+            vowelCount++
+        }
     }
-    println("vowel count in '$sentence' is $vowel")
+    println("count of the Vowel : $vowelCount")
 }
