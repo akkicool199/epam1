@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.example.services;
+
+option java_package = "com.example.services";
+option java_multiple_files = true;
+
+service CalculatorService{
+  rpc addition(CalculationRequest) returns (CalculationResponse);
+  rpc subtraction(CalculationRequest) returns (CalculationResponse);
+  rpc multiplication(CalculationRequest) returns (CalculationResponse);
+  rpc division(CalculationRequest) returns (CalculationResponse);
+}
+
+message CalculationRequest{
+  double val1 = 1;
+  double val2 = 2;
+}
+
+message CalculationResponse{
+  double result=1;
+}
